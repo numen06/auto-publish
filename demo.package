@@ -19,6 +19,8 @@ mail:
 #服务器配置
 build:
     name: 【你编译的应用程序取一个名称】
+    #是否暂定编译
+    pause: False
     # 前置配置文件可以是多个默认下载到代码目录下，比如maven的setting.xml,如果git目录下
     # configs:
     #     - settings.xml
