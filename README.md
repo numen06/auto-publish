@@ -10,8 +10,8 @@
 - maven 3.6.3
 - jdk-8u241-linux-x64
 ###### NODE环境说明
-- maven 3.6.3
-- jdk-8u241-linux-x64
+- nodejs 12
+- npm 6
 ###### 关于GIT-URL的说明
 http://www.kernel.org/pub/software/scm/git/docs/git-clone.html#URLS
 - 为了安全git只同步master分支作为编译分支
