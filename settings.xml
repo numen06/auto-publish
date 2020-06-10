@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+<!--    <localRepository>/repository</localRepository>-->
+
+<!--    <servers>
+        &lt;!&ndash; test &ndash;&gt;
+        <server>
+            <id>test-releases</id>
+            <username>test</username>
+            <password>test</password>
+        </server>
+        <server>
+            <id>tes-snapshots</id>
+            <username>tes</username>
+            <password>tes</password>
+        </server>
+    </servers>-->
+
+    <!-- mirrors | This is a list of mirrors to be used in downloading artifacts
+        from remote repositories. | | It works like this: a POM may declare a repository
+        to use in resolving certain artifacts. | However, this repository may have
+        problems with heavy traffic at times, so people have mirrored | it to several
+        places. | | That repository definition will have a unique id, so we can create
+        a mirror reference for that | repository, to be used as an alternate download
+        site. The mirror site will be the preferred | server for that repository.
+        | -->
+    <mirrors>
+        <mirror>
+            <id>mirror</id>
+            <mirrorOf>*</mirrorOf>
+            <name>mirror</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </mirror>
+
+    </mirrors>
+
+
+    <activeProfiles>
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+
+</settings>

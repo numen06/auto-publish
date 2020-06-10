@@ -1,0 +1,10 @@
+configparser2==4.0.0
+gitdb2==2.0.6
+GitPython==3.0.5
+smmap2==2.0.5
+httpserver==1.1.0
+paramiko==2.7.1
+pyyaml==5.3
+six==1.14.0
+oss2==2.11.0
+nacos-sdk-python==0.1.1

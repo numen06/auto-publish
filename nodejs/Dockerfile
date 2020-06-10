@@ -1,0 +1,25 @@
+FROM registry.cn-hangzhou.aliyuncs.com/numen/base-nodejs
+
+RUN mkdir /app
+RUN mkdir /app/logs
+#开始复制程序
+WORKDIR /app
+COPY requirements.txt /app
+
+
+RUN pip3 install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+
+
+RUN chmod -R 777 /app
+
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+COPY ./Lib /app/Lib
+COPY ./build.py /app
+COPY ./publish.py /app
+
+RUN node -v
+
+RUN chmod -R 777 /app
+
+#ENTRYPOINT ["python3", "./start.py" ]
