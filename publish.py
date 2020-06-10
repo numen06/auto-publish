@@ -2,12 +2,12 @@
 import os
 # import git
 import paramiko
-from Lib.Log import Logger
+from Libs.Log import Logger
 import yaml
 import time
-from Lib.NConfg import NacosClient
-from Lib.OSS import AliOSS
-from Lib.MAIL import MailSender
+from Libs.NConfg import NacosClient
+from Libs.OSS import AliOSS
+from Libs.MAIL import MailSender
 
 
 class SyncPackage():
