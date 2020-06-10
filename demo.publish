@@ -1,0 +1,35 @@
+#项目名称
+projectName: 云上环境
+# 轮询时间
+interval: 60
+oss:
+    access_key_id: 【你的access_key_id】
+    access_key_secret: 【你的access_key_secret】
+    bucket: 【你的bucket】
+# 邮件发送配置
+mail:
+    host: 【SMTP服务器地址】
+    port: 【SMTP服务器地址端口】
+    username: 【发送邮件的账户名】
+    password : 【发送邮件帐户的密码】
+    from : 【发送邮件的别名】
+    to: 【接受人的邮件地址】
+    subject: JBM自动编译器
+server:
+    mumi:
+        ip: 【实际的服务器地址】
+        port: 【SSH端口号】
+        user: 【SSH账号】
+        password: 【SSH密码】
+apps:
+    okc-emc-business:
+        # 文件放置到服务器的位置
+        path: /opt/app/okc-emc-business/app.jar
+        # OSS上的文件路径，默认为:分支/包名
+        package: master/okc-emc-business.jar
+        # 放置完成后执行的命令
+        cmd: docker restart okc-emc-business
+        # 需要执行的服务器列表，指向的是上一级server的配置
+        servers:
+            - mumi
+

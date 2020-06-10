@@ -1,44 +1,40 @@
+interval: 60
 #git地址
 git:
-    url: https://【账号】:【密码】@github.com/numen06/jar-publish.git
+    url: 【你的git地址包含密码的】
+    branch: master
+oss:
+    access_key_id: 【你的access_key_id】
+    access_key_secret: 【你的access_key_secret】
+    bucket: 【你的bucket】
+# 邮件发送配置
+mail:
+    host: 【SMTP服务器地址】
+    port: 【SMTP服务器地址端口】
+    username: 【发送邮件的账户名】
+    password : 【发送邮件帐户的密码】
+    from : 【发送邮件的别名】
+    to: 【接受人的邮件地址】
+    subject: JBM自动编译器
 #服务器配置
-#需要发布到的服务器地址
-server:
-    test1:
-        ip: 192.168.8.168
-        user: root
-        password: root
-    test2:
-        ip: 192.168.8.168
-        user: root
-        password: root
-#开始为编译目录
 build:
-    #编译完成之后一般都有很多个JAR包，可以分别发布
-    test1:
-        #选择多个服务器发布
-        server:
-            - test1
-            - test2
+    name: 【你编译的应用程序取一个名称】
+    # 前置配置文件可以是多个默认下载到代码目录下，比如maven的setting.xml,如果git目录下
+    # configs:
+    #     - settings.xml
+    cmd: mvn clean package --settings /app/sources/settings.xml -Dmaven.test.skip=true -U
+#开始为编译目录
+package:
+    okc-emc-business:
         #打包完成的jar指定目录
-        local: /okc-emc-auth/pom.xml
-        #远程服务器放置的地址
-        remote: /home/app.jar
-        #编译完成之后执行命令
-        #cmd: zip
-        #放置完成后执行的命令
-        appctl: docker restart app
-    test2:
-        #选择多个服务器发布
-        server:
-            - test1
-            - test2
+        local: /okc-emc-business/target/okc-emc-business.jar
+    okc-emc-schedule:
         #打包完成的jar指定目录
-        local: /okc-emc-auth/pom.xml
-        #远程服务器放置的地址
-        remote: /home/app.jar
-        #编译完成之后执行命令
-        #cmd: zip
-        #放置完成后执行的命令
-        appctl: docker restart app
+        local: /okc-emc-schedule/target/okc-emc-schedule.jar
+    okc-emc-system:
+        #打包完成的jar指定目录
+        local: /okc-emc-system/target/okc-emc-system.jar
+    okc-emc-alarm:
+        #打包完成的jar指定目录
+        local: /okc-emc-alarm/target/okc-emc-alarm.jar
 
