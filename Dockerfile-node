@@ -14,9 +14,9 @@ RUN chmod -R 777 /app
 
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
-COPY ./Lib /app/Lib
-COPY ./build.py /app
-COPY ./publish.py /app
+COPY Lib /app/Lib
+COPY build.py /app
+COPY publish.py /app
 
 RUN node -v
 

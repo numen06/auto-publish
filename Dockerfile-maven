@@ -4,7 +4,7 @@ RUN mkdir /app
 RUN mkdir /app/logs
 #开始复制程序
 WORKDIR /app
-COPY ./requirements.txt /app
+COPY requirements.txt /app
 
 
 RUN pip3 install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
@@ -12,9 +12,9 @@ RUN pip3 install --no-cache-dir -r requirements.txt -i http://mirrors.aliyun.com
 
 RUN chmod -R 777 /app
 
-COPY ./Lib /app/Lib
-COPY ./build.py /app
-COPY ./publish.py /app
+COPY Lib /app/Lib
+COPY build.py /app
+COPY publish.py /app
 
 
 RUN chmod -R 777 /app
