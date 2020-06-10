@@ -22,4 +22,4 @@ RUN node -v
 
 RUN chmod -R 777 /app
 
-#ENTRYPOINT ["python3", "./start.py" ]
+ENTRYPOINT ["python3", "./build.py" ]

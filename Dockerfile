@@ -19,4 +19,4 @@ COPY /publish.py /app
 
 RUN chmod -R 777 /app
 
-ENTRYPOINT ["python3", "./build.py" ]
+ENTRYPOINT ["python3", "./publish.py" ]
